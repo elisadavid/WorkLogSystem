@@ -1,0 +1,61 @@
+# =========================
+# NetBeans
+# =========================
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+build/
+dist/
+
+# NetBeans user-specific files
+/nbproject/private/
+/nbproject/Makefile-*
+/nbproject/Package-*
+/nbproject/var/
+/nbproject/build-impl.xml
+/nbproject/genfiles.properties
+
+# =========================
+# Java
+# =========================
+*.class
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# =========================
+# IDE
+# =========================
+.idea/
+*.iml
+.vscode/
+
+# =========================
+# Operating System
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Tomcat
+# =========================
+work/
+temp/
+logs/
+*.war
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Generated files
+# =========================
+target/
+out/
