@@ -1,0 +1,42 @@
+CREATE TABLE mentor_performance
+(
+    performance_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    report_id INT NOT NULL,
+
+    trainee_id VARCHAR(30) NOT NULL,
+
+    mentor_id VARCHAR(30) NOT NULL,
+
+    performance_rating VARCHAR(30),
+
+    mentor_remark TEXT,
+
+    recommendation VARCHAR(30),
+
+    evaluated_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(report_id)
+    REFERENCES monthly_report(report_id)
+);
+
+
+ALTER TABLE trainee_leave_details
+ADD COLUMN mentor_remark VARCHAR(500);
+
+CREATE TABLE `trainee_leave_details` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `trainee_id` varchar(50) NOT NULL,
+  `month` varchar(30) NOT NULL,
+  `leave_from` date NOT NULL,
+  `leave_to` date NOT NULL,
+  `leave_type` varchar(50) NOT NULL,
+  `reason` varchar(255) DEFAULT NULL,
+  `status` varchar(30) DEFAULT 'PENDING',
+  `mentor_remark` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
