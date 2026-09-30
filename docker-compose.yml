@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: worklog_mysql
+    environment:
+      MYSQL_DATABASE: trainee_mgmt
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build:
+      context: .
+    container_name: worklog_app
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: trainee_mgmt
+      DB_USER: root
+      DB_PASSWORD: root
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

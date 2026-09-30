@@ -1,0 +1,9 @@
+build/
+dist/
+.git/
+.gitignore
+.idea/
+.vscode/
+*.iml
+**/target/
+**/.DS_Store
